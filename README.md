@@ -9,9 +9,7 @@ It also comes with a Docker image, for ease of deployment in containerised appli
 
 Seeded name generation can help provide human-readable mnemonics for keeping track of data that would otherwise be near-impossible for an average human to memorise.
 
-For instance, `suspicious_booth` is much easier to remember than its cumbersome PRNG seed `483f:377d:7320:e965:37a1:6193:3aca:ca6e`.
-
-This had some unexpected use cases in HPC and cluster management, particularly when working with large-scale Kubernetes multiclusters and docker-compose stacks.
+This had some unexpected use cases in HPC and cluster management, particularly when working with large-scale Kubernetes multiclusters, Compose stacks and IPv6 addresses. For instance, `suspicious_booth` is much easier to remember than its cumbersome PRNG seed `483f:377d:7320:e965:37a1:6193:3aca:ca6e`.
 
 ## Usage
 
