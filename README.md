@@ -5,7 +5,7 @@ Fork of a [project by GitHub user shamrin](https://github.com/shamrin/namesgener
 
 It also comes with a Docker image, for ease of deployment in containerised applications.
 
-## Motivation - note on mnemonics
+## Motivation - a note on mnemonics
 
 Seeded name generation can help provide human-readable mnemonics for keeping track of data that would otherwise be near-impossible for an average human to memorise. For instance `suspicious_booth` is much easier to remember than its PRNG seed `483f:377d:7320:e965:37a1:6193:3aca:ca6e`.
 
