@@ -1,70 +1,10 @@
 namesgenerator
 ==============
 
-Docker-style names generator, ported to Python and JavaScript/TypeScript.
+Fork of a [project by GitHub user shamrin](https://github.com/shamrin/namesgenerator), with the python3 port modified to accommodate an optional argument for a PRNG seed.
 
-### JavaScript
+#### But why? A note on mnemonics
 
-Just copy `namesgenerator.js` to your project: 
+Seeded name generation can help provide human-readable mnemonics for keeping track of data that would otherwise be near-impossible for an average human to memorise. For instance `suspicious_booth` is much easier to remember than its PRNG seed `483f:377d:7320:e965:37a1:6193:3aca:ca6e`.
 
-```
-curl -O https://raw.githubusercontent.com/shamrin/namesgenerator/master/namesgenerator.js
-```
-
-Or as TypeScript module:
-
-```
-curl -o namesgenerator.ts https://raw.githubusercontent.com/shamrin/namesgenerator/master/namesgenerator.js
-```
-
-Or install from npm:
-
-```
-npm install --save namesgenerator
-```
-
-#### Usage
-
-```js
-import getRandomName from './namesgenerator';
-
-console.log(getRandomName()) // hopeful_morse
-```
-
-### Python
-
-Just copy `namesgenerator.py` to your project: 
-
-```
-curl -O https://raw.githubusercontent.com/shamrin/namesgenerator/master/namesgenerator.py
-```
-
-Or install from PyPI:
-
-```
-pip install namesgenerator
-```
-
-#### Usage
-
-```python
->>> import namesgenerator
->>> print namesgenerator.get_random_name()
-hopeful_morse
->>> for i in range(5):
-...   print namesgenerator.get_random_name()
-...
-angry_torvalds
-jolly_nobel
-happy_almeida
-sleepy_kowalevski
-happy_almeida
-```
-
-### Other implementations
-
-* [Go][2] (original)
-* [Alternative JavaScript implementation, Node.js only][1]
-
-[1]: https://github.com/atomiqio/docker-namesgenerator
-[2]: https://github.com/docker/docker/blob/master/pkg/namesgenerator/names-generator.go
+This had some unexpected use cases in HPC and cluster management, particularly when working with large-scale Kubernetes multiclusters and docker-compose stacks.
