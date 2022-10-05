@@ -6,9 +6,7 @@
 # MIT License
 
 import random
-
-if sys.argv[1:]:   # If optional argument is provided, use as seed for PRNG
-    random.seed(str(sys.argv[1]))
+import sys
 
 left = [
   'admiring',
@@ -592,7 +590,13 @@ right = [
 
 
 def get_random_name(sep='_'):
-    r = random.SystemRandom()
+    # If optional argument is provided, use as seed for PRNG
+    # Else, use SystemRandom(), sourcing from urandom
+    if sys.argv[1:]:
+        r = random.Random(str(sys.argv[1]))
+    else:
+        r = random.SystemRandom()
+    
     while 1:
         name = '%s%s%s' % (r.choice(left), sep, r.choice(right))
         if name == 'boring' + sep + 'wozniak': # Steve Wozniak is not boring
