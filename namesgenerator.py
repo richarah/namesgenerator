@@ -7,6 +7,9 @@
 
 import random
 
+if sys.argv[1:]:   # If optional argument is provided, use as seed for PRNG
+    random.seed(str(sys.argv[1]))
+
 left = [
   'admiring',
   'adoring',
